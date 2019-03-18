@@ -3030,7 +3030,7 @@
   opacity: 0;
   transform: translate3d(-100px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
   transform-style: preserve-3d;
-  transition: transform 1.0s ease, opacity 1.5s ease;
+  transition: transform 1.0s ease, opacity 1.0s ease;
 }
 .side-block__exclusive-offer.show {
   opacity: 1;
@@ -3038,3 +3038,14 @@
   transform-style: preserve-3d;  
 }
 /* достаем снизу "шкалу времени" */
+.buttom-block__time-scale {
+  opacity: 0;
+  transform: translate3d(0px, 100px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d; 
+  transition: transform 1.0s ease, opacity 1.0s ease; 
+}
+.buttom-block__time-scale.show {
+  opacity: 1;
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+}

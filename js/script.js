@@ -99,28 +99,40 @@ function validFormForPdf() {
 		validPhoneFailForPdf.classList.toggle('show');						
 	}
 }
-/* достаем сбоку "эксклюзивное предложение" */
+/* достаем сбоку "эксклюзивное предложение" 
 window.onscroll = function() {	
 	var specBlockExclusiveOffer = document.getElementById('specBlockExclusiveOffer');
 	var coords = specBlockExclusiveOffer.getBoundingClientRect();
-	var windowHeight = document.documentElement.clientHeight;
-	console.log(coords.top)
+
+	console.log("эксклюзивное предложение: " + coords.top)
 	if (coords.top < 0) {
 		var sideBlock = document.getElementsByClassName('div-block-19');
 		console.log(sideBlock.length);
 		sideBlock[0].style = "";
 		sideBlock[0].classList.add('show');
 	}
-}
+} */
 /* достаем снизу "шкалу времени" */
 window.onscroll = function() {	
 	var specBlockTimeScale = document.getElementById('specBlockTimeScale');
-	var coords = specBlockTimeScale.getBoundingClientRect();
+	var coordsTimeScale = specBlockTimeScale.getBoundingClientRect();
 
-	if (coords.top < 0) {
-		var buttomBlock = document.getElementsByClassName('buttomBlockImg');
+	var specBlockExclusiveOffer = document.getElementById('specBlockExclusiveOffer');
+	var coords = specBlockExclusiveOffer.getBoundingClientRect();
+
+	console.log("шкалу времени: " + coordsTimeScale.top)
+	if (coordsTimeScale.top < 0) {
+		var buttomBlock = document.getElementById('buttomBlockImg');
+		console.log(buttomBlock.length);
+		buttomBlock.style = "";
+		buttomBlock.classList.add('show');
+	}
+
+	if (coordsTimeScale.top < -1400) {
+		var sideBlock = document.getElementsByClassName('div-block-19');
 		console.log(sideBlock.length);
 		sideBlock[0].style = "";
 		sideBlock[0].classList.add('show');
 	}
 }
+/* достаем снизу "" */
