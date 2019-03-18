@@ -74,7 +74,7 @@
       <div id="w-node-64550154f57f-181e462f" class="div-block-quatroo">
         <h1 class="heading-3 centre">Atlantis, как и вы, ценит комфорт</h1>
         <p class="paragraph-3 centre">Поэтому, поднявшись в свою квартиру, вы полностью погружаетесь в уют: эргономичная прихожая, большая кухня, просторные спальни и даже собственные террасы.</p>
-        <p class="paragraph-3 centre"><strong>Посмотрите, как выглядят планировки в ЖК Atlantis Deluxe, прямо сейчас.</strong></p><button type="button" data-w-id="9601545e-e392-1945-1f01-eadc742233d1" href="#" class="button_01 w-button" onclick="deployContentForPdf()">Скачать планировки</button></div>
+        <p class="paragraph-3 centre"><strong>Посмотрите, как выглядят планировки в ЖК Atlantis Deluxe, прямо сейчас.</strong></p><button type="submit" data-w-id="9601545e-e392-1945-1f01-eadc742233d1" href="#" class="button_01 w-button" onclick="deployContentForPdf()">Скачать планировки</button></div>
     </div>
   </div>
   <div class="section-9">
@@ -139,7 +139,7 @@
           <p class="paragraph-53">X</p>
         </div>
         <div class="w-form">
-          <form id="wf-form-Phone-Form" name="wf-form-Phone-Form" data-name="Phone Form" class="form-2"><label for="Phone" class="field-label">Чтобы мы смогли вам перезвонить, оставьте свой номер телефона</label><input type="tel" class="text-field w-input" maxlength="256" name="Phone" data-name="Phone" placeholder="Ваш номер телефона" id="Phone" required=""><input type="button" value="Отправить" data-wait="Пожалуйста подождите..." class="button_01 pop-up w-button" onclick="validForm()"></form>
+          <form id="wf-form-Phone-Form" name="wf-form-Phone-Form" data-name="Phone Form" class="form-2"><label for="Phone" class="field-label">Чтобы мы смогли вам перезвонить, оставьте свой номер телефона</label><input type="tel" class="text-field w-input phonemask" maxlength="256" name="Phone" data-name="Phone" placeholder="Ваш номер телефона" id="Phone" required=""><input type="submit" value="Отправить" data-wait="Пожалуйста подождите..." class="button_01 pop-up w-button" onclick="validForm()"></form>
           <div class="success-message w-form-done" id="validPhoneDone">
             <div class="text-block"><strong>Спасибо!</strong></div>
             <div class="text-block">Наши специалисты свяжутся с Вами в ближайшее время</div>
@@ -151,14 +151,14 @@
       </div>
     </div>
   </div>
-  <div data-w-id="84897892-2e00-d806-098f-edb1b9baf13c" style="display:none" class="pop-up-pdf_plan"  id="popUpPdfPlan">
+  <div data-w-id="84897892-2e00-d806-098f-edb1b9baf13c" style="display:none" class="pop-up-pdf_plan" id="popUpPdfPlan">
     <div class="form-wrapper">
       <div class="form">
         <div data-w-id="84897892-2e00-d806-098f-edb1b9baf13f" class="div-block-88895" onclick="closeFunctionForPdf()">
           <p class="paragraph-53">X</p>
         </div>
         <div class="w-form">
-          <form id="wf-form-Phone-Form" name="wf-form-Phone-Form" data-name="Phone Form" class="form-2"><label for="Phone-2" class="field-label">Заполните простую форму обратной связи, и планировки будут доступны для скачивания</label><input type="tel" class="text-field w-input" maxlength="256" name="Phone-2" data-name="Phone 2" placeholder="Ваш номер телефона" id="Phone-2" required=""><input type="button" value="Отправить" data-wait="Пожалуйста подождите..." class="button_01 pop-up w-button" onclick="validFormForPdf()"></form>
+          <form id="wf-form-Phone-Form" name="wf-form-Phone-Form" data-name="Phone Form" class="form-2"><label for="Phone-2" class="field-label">Заполните простую форму обратной связи, и планировки будут доступны для скачивания</label><input type="tel" class="text-field w-input phonemask" maxlength="256" name="Phone-2" data-name="Phone 2" placeholder="Ваш номер телефона" id="Phone-2" required=""><input type="button" value="Отправить" data-wait="Пожалуйста подождите..." class="button_01 pop-up w-button" onclick="validFormForPdf()"></form>
           <div class="success-message w-form-done" id="validPhoneDoneForPdf">
             <div class="text-block"><strong>Спасибо за проявленный интерес!</strong></div><a href="documents/Atlantis_plan.pdf" class="button_01 w-button">PDF ~ 1,4 mb</a></div>
           <div class="error-message w-form-fail" id="validPhoneFailForPdf">
@@ -172,7 +172,9 @@
   <!--
   <script src="js/webflow.js" type="text/javascript"></script>
   -->
-  <script src="js/script.js" type="text/javascript"></script>
+  <script src="js/jquery.inputmask.bundle.min.js" type="text/javascript"></script>
+  <script src="js/phone-ru.min.js" type="text/javascript"></script>
+  <script src="js/script.js" type="text/javascript"></script>  
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
 </body>
 </html>
