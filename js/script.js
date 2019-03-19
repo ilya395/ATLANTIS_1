@@ -1,3 +1,4 @@
+/* для маски формы */
 var inputmask = $('.phonemask');
     
     Inputmask.extendDefinitions({
@@ -20,6 +21,7 @@ function closeFunction() {
 	var closePopup = document.getElementById('signBtnLow');
 	console.log(closePopup.length);
 	popUpZvonok.style.display = 'none';
+
 	var formBlock = document.getElementById('wf-form-Phone-Form');
 	formBlock.style.display = 'block';	
 
@@ -50,47 +52,32 @@ function validForm() {
 		validPhoneDone.style.display = 'block';				
 	}
 	*/
-	patternPhone = /^\+\d{1,3}\s?\(\d{3}\)\s?\d{3}(-\d{2}){2}$/;
 
 	var formLowPhone = document.getElementById('Phone');
 	console.log(formLowPhone.value);
 	var validPhoneFail = document.getElementById('validPhoneFail');
 	validPhoneFail.classList.remove('show');
+	console.log(formLowPhone);
+	console.log(formLowPhone.value);
+	console.log(formLowPhone.value.length);
+	console.log(formLowPhone.innerHTML);
 
 	var validPhoneDone = document.getElementById('validPhoneDone');
 	validPhoneDone.classList.remove('show');
-/*
-	var obj = formLowPhone;
-	function() {
-		for (var j = 0; j < obj.length; j++) {
-			if (obj[j] != "+") {
-				return obj[j];
-			}
-			obj += obj[j];
-		}
-	}
-	console.log(obj.value.length);
-*/	
-	
-	function isNumeric(n) {
-    	return !isNaN(parseFloat(n)) && isFinite(n)
-    }
 
-	console.log(typeof formLowPhone.value);
-	console.log(formLowPhone.value.length);
-
-
-	st = formLowPhone.value;
-	console.log(st);
-
-	if (patternPhone.test(formLowPhone.value) == true) {
+	if (formLowPhone.value >= 1) {
 		validPhoneDone.classList.toggle('show');
 		var formBlock = document.getElementById('wf-form-Phone-Form');
 		formBlock.style.display = 'none'; 	
 	} else {
-		validPhoneFail.classList.toggle('show');
-		return false;						
+		validPhoneFail.classList.toggle('show');						
 	}
+}
+function formSubmit() {
+    var validPhoneDone = document.getElementById('validPhoneDone');
+	validPhoneDone.classList.add('show');
+	var formBlock = document.getElementById('wf-form-Phone-Form');
+	formBlock.style.display = 'none';
 }
 /* форма с pdf */
 /* достаем всплывающий контент */
@@ -113,6 +100,7 @@ function closeFunctionForPdf() {
 	validPhoneDoneForPdf.classList.remove('show'); 
 }
 /* валидация */
+/*
 function validFormForPdf() {
 
 	var formUpperPhone = document.getElementById('Phone-2');
@@ -124,6 +112,7 @@ function validFormForPdf() {
 	validPhoneDoneForPdf.classList.remove('show');
 
 	if (formUpperPhone.value >= 1) {
+		var validPhoneDoneForPdf = document.getElementById('validPhoneDoneForPdf');
 		validPhoneDoneForPdf.classList.toggle('show');
 		var formBlock = document.getElementById('wf-form-Phone-Form');
 		console.log(formBlock.length);
@@ -148,38 +137,41 @@ window.onscroll = function() {
 		sideBlock[0].classList.add('show');
 	}
 } */
-/* достаем снизу "шкалу времени" */
+/* достаем снизу "шкалу времени" 
 window.onscroll = function() {	
-	/* переменные преимуществ */
-	var specBlockAdvantages = document.getElementById('specBlockAdvantages');
-	var coordsAdvantages = specBlockAdvantages.getBoundingClientRect();
-	/* переменные "шкалы времени" */
 	var specBlockTimeScale = document.getElementById('specBlockTimeScale');
 	var coordsTimeScale = specBlockTimeScale.getBoundingClientRect();
-	/* переменные "эксклюзивного предложения" */
+
 	var specBlockExclusiveOffer = document.getElementById('specBlockExclusiveOffer');
 	var coords = specBlockExclusiveOffer.getBoundingClientRect();
-	/* переменные преимуществ */
-	if (coordsAdvantages.top < 0) {
-		var sideBlock = document.getElementsByClassName('div-block-19');
-		console.log(sideBlock.length);
-		sideBlock[0].style = "";
-		sideBlock[0].classList.add('show');
-	}
-	/* достаем "шкалу времени" */
-	console.log("шкала времени: " + coordsTimeScale.top)
+
+	console.log("шкалу времени: " + coordsTimeScale.top)
 	if (coordsTimeScale.top < 0) {
 		var buttomBlock = document.getElementById('buttomBlockImg');
 		console.log(buttomBlock.length);
 		buttomBlock.style = "";
 		buttomBlock.classList.add('show');
 	}
-	/* достаем "экслюзивное предложение" */
+
 	if (coordsTimeScale.top < -1400) {
 		var sideBlock = document.getElementsByClassName('div-block-19');
 		console.log(sideBlock.length);
 		sideBlock[0].style = "";
 		sideBlock[0].classList.add('show');
-	}	
-}
+	}
+}*/
 /* достаем снизу "" */
+$(document).on('is_sucsessful', function(event, response) {
+    var form = response.form;
+    
+    $('.form-2').css('display', 'none');
+    console.log($('.form-2').length);
+    $('.success-message.w-form-done').css('display', 'block');
+    $('.error-message.w-form-fail').css('display', 'none');
+
+});
+$(document).on('is_error', function(event, response) {
+    $('.form-2').css('display', 'none');
+    $('.error-message .w-form-fail').css('display', 'block');
+    $('.success-message .w-form-done').css('display', 'none');
+});
